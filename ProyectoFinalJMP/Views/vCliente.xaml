@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoFinalJMP.Views.vCliente"
+             Title="">
+    <ScrollView>
+        <VerticalStackLayout Padding="10">
+            <Label Text="Clientes" 
+                   FontSize="Large" 
+                   HorizontalOptions="Center" />
+            <Button 
+                Clicked="btnInicio_Clicked" 
+                BackgroundColor="LightBlue" 
+                TextColor="White"
+                FontSize="Medium"
+                HeightRequest="40"
+                WidthRequest="40"
+                HorizontalOptions="End"
+                CornerRadius="20"
+                Margin="0,0,0,10">
+                <Button.ImageSource>
+                    <FontImageSource FontFamily="{DynamicResource MaterialIconsFontFamily}" Glyph="home" Size="24" Color="White"/>
+                </Button.ImageSource>
+            </Button>
+
+            <Button Text="+" 
+                Clicked="btnAgregarCliente_Clicked" 
+                BackgroundColor="Green" 
+                TextColor="White"
+                FontSize="Medium"
+                HeightRequest="40"
+                WidthRequest="40"
+                HorizontalOptions="End"
+                CornerRadius="20"
+                Margin="0,0,0,10" />
+
+            <CollectionView x:Name="clienteCollection" SelectionMode="Single" SelectionChanged="clienteCollection_SelectionChanged">
+                <CollectionView.Header>
+                    <Grid ColumnDefinitions="*,*,*,*,*,*,*,*,*,*" Padding="5">
+                        <Label Text="Código" FontAttributes="Bold" Grid.Column="0" />
+                        <Label Text="Identificacion" FontAttributes="Bold" Grid.Column="1" />
+                        <Label Text="Nombre" FontAttributes="Bold" Grid.Column="2" />
+                        <Label Text="Telefono" FontAttributes="Bold" Grid.Column="3" />
+                        <Label Text="Email" FontAttributes="Bold" Grid.Column="4" />
+                        <Label Text="Direccion" FontAttributes="Bold" Grid.Column="5" />
+                        <Label Text="Ciudad" FontAttributes="Bold" Grid.Column="6" />
+                        <!--<Label Text="Ubicacion" FontAttributes="Bold" Grid.Column="7" />-->
+                        <Label Text="FechaRegistro" FontAttributes="Bold" Grid.Column="7" />
+                        <Label Text="Estado" FontAttributes="Bold" Grid.Column="8" />
+                        <Label Text="Acciones" FontAttributes="Bold" Grid.Column="9" />
+                    </Grid>
+                </CollectionView.Header>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="10" ColumnDefinitions="*,*,*,*,*,*,*,*,*,*">
+                            <Label Grid.Column="0" Text="{Binding Codigo }" />
+                            <Label Grid.Column="1" Text="{Binding Identificacion}" />
+                            <Label Grid.Column="2" Text="{Binding Nombre}" />
+                            <Label Grid.Column="3" Text="{Binding Telefono}" />
+                            <Label Grid.Column="4" Text="{Binding Email}" />
+                            <Label Grid.Column="5" Text="{Binding Direccion}" />
+                            <Label Grid.Column="6" Text="{Binding Ciudad}" />
+                            <!--<Label Grid.Column="7" Text="{Binding Ubicacion}" />-->
+                            <Label Grid.Column="7" Text="{Binding FechaRegistro}" />
+                            <Label Grid.Column="8" Text="{Binding Estado}" />
+                            <Button Grid.Column="9" Text="Ver Mapa" Clicked="OnVerMapaClicked" CommandParameter="{Binding Ubicacion}" />
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

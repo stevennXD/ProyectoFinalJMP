@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoFinalJMP.Views.CreateProduct"
+             Title="">
+    <VerticalStackLayout Padding="10">
+        <!-- Título -->
+        <Label Text="Formulario de Producto" FontSize="24" HorizontalTextAlignment="Center" />
+
+        <!-- Campos del formulario -->
+        <Entry x:Name="nombreEntry" Placeholder="Nombre del Producto" />
+        <Entry x:Name="codigoEntry" Placeholder="Código del Producto" />
+        <Entry x:Name="descripcionEntry" Placeholder="Descripción del Producto" />
+        <Entry x:Name="precioEntry" Placeholder="Precio del Producto" Keyboard="Numeric" />
+        <Entry x:Name="cantidadEntry" Placeholder="Cantidad del Producto" Keyboard="Numeric" />
+
+        <!-- Botones -->
+        <Button Text="Guardar Producto" Clicked="OnGuardarClicked" />
+    </VerticalStackLayout>
+</ContentPage>

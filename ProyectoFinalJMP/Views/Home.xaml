@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoFinalJMP.Views.Home"
+             Title="">
+    <ContentPage.Content>
+        <Grid Padding="10">
+            <!-- Filtro -->
+            <Label x:Name="userLabel" HorizontalOptions="End" TextColor="Red"/>
+            <VerticalStackLayout>
+
+                <Picker Title="Filtrar" x:Name="FilterPicker" SelectedIndexChanged="OnFilterPickerChanged">
+                    <Picker.Items>
+                        <x:String>por entregar</x:String>
+                        <x:String>entregado</x:String>
+                        <x:String>cancelado</x:String>
+                    </Picker.Items>
+                </Picker>
+
+                <!-- Tabla -->
+                <CollectionView x:Name="requestCollection" ItemsSource="{Binding Orders}" Margin="0,10,0,0">
+                    <CollectionView.Header>
+                        <Grid BackgroundColor="LightGray">
+                            <Label Text="ID" FontAttributes="Bold" HorizontalOptions="Start" />
+                            <Label Text="nombre" FontAttributes="Bold" HorizontalOptions="Center" />
+                            <Label Text="estado" FontAttributes="Bold" HorizontalOptions="End" />
+                        </Grid>
+                    </CollectionView.Header>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Padding="5">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="2*" />
+                                    <ColumnDefinition Width="2*" />
+                                </Grid.ColumnDefinitions>
+                                <Label Text="{Binding id}" />
+                                <Label Text="{Binding nombre}" Grid.Column="1" />
+                                <Label Text="{Binding estado}" Grid.Column="2" />
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </VerticalStackLayout>
+
+            <!-- Barra de Navegación -->
+            <Grid VerticalOptions="End" Padding="10" ColumnSpacing="0">
+                <!-- Definir columnas para alinear los botones -->
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <!-- Izquierda -->
+                    <ColumnDefinition Width="1*" />
+                    <!-- Centro -->
+                    <ColumnDefinition Width="1*" />
+                    <!-- Derecha -->
+                </Grid.ColumnDefinitions>
+
+                <!-- Botón Izquierda -->
+                <Button Text="Products" Grid.Column="0" HorizontalOptions="Start" Clicked="btnProducts_Clicked"/>
+
+                <!-- Botón Centro -->
+                <Button Text="Request" Grid.Column="1" HorizontalOptions="Center" Clicked="btnRequests_Clicked"/>
+
+                <!-- Botón Derecha -->
+                <Button Text="Customers" Grid.Column="2" HorizontalOptions="End" Clicked="btnCustomers_Clicked"/>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

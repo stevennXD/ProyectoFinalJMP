@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoFinalJMP.Views.UpdateDeleteProduct"
+             Title="">
+    <VerticalStackLayout Padding="20">
+        <Label Text="Actualizar o Eliminar Producto" 
+               FontSize="Large" 
+               HorizontalOptions="Center" />
+
+        <Entry x:Name="nombreEntry" Placeholder="Nombre del Producto" />
+        <Entry x:Name="codigoEntry" Placeholder="Código del Producto" />
+        <Entry x:Name="descripcionEntry" Placeholder="Descripción del Producto" />
+        <Entry x:Name="precioEntry" Placeholder="Precio del Producto" Keyboard="Numeric" />
+        <Entry x:Name="cantidadEntry" Placeholder="Cantidad del Producto" Keyboard="Numeric" />
+
+        <Button Text="Actualizar" Clicked="btnActualizar_Clicked" />
+        <Button Text="Eliminar" Clicked="btnEliminar_Clicked" BackgroundColor="Red" TextColor="White" />
+    </VerticalStackLayout>
+</ContentPage>

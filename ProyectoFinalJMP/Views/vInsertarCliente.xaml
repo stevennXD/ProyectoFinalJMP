@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoFinalJMP.Views.vInsertarCliente"
+             Title="">
+    <ScrollView>
+        <VerticalStackLayout Padding="10">
+            <Label Text="Registrar Cliente" HorizontalOptions="Center" FontSize="24" />
+
+            <Entry x:Name="txtIdentificacion" Placeholder="Identificación" Margin="15"
+                WidthRequest="666"
+                HorizontalOptions="Center" />
+            <Entry x:Name="txtNombre" Placeholder="Nombre" Margin="15"
+                WidthRequest="666"
+                HorizontalOptions="Center" />
+            <Entry x:Name="txtTelefono" Placeholder="Teléfono" Margin="15"
+                WidthRequest="666"
+                HorizontalOptions="Center" />
+            <Entry x:Name="txtEmail" Placeholder="Email" Keyboard="Email" Margin="15"
+                WidthRequest="666"
+                HorizontalOptions="Center" />
+            <Entry x:Name="txtDireccion" Placeholder="Dirección" Margin="15"
+                WidthRequest="666"
+                HorizontalOptions="Center" />
+            <!--<Entry x:Name="txtCiudad" Placeholder="Ciudad" />-->
+
+            <Picker x:Name="pickerCiudad" Margin="15"
+                WidthRequest="666"
+                HorizontalOptions="Center" >
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Quito</x:String>
+                        <x:String>Cuenca</x:String>
+                        <x:String>Guayaquil</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Entry x:Name="txtUbicacion" Placeholder="Ubicación" Margin="15"
+                WidthRequest="666"
+                HorizontalOptions="Center" />
+
+            <Button Text="Guardar" Clicked="btnGuardar_Clicked" Margin="20"
+                WidthRequest="100"
+                HorizontalOptions="Center" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
