@@ -6,8 +6,8 @@ public partial class WebViewPage : ContentPage
     {
         InitializeComponent();
 
-        // Define tu API Key de Google Maps aquí
-        string apiKey = "AIzaSyAJyHye156_EMSPSn6qZ51GwEcyLo_dDfM";  // Sustituye por tu clave API
+        // Define tu API Key de Google Maps aquÃ­
+        string apiKey = "";  // Sustituye por tu clave API
 
         // Construye la URL para Google Maps
         string url = $"https://www.google.com/maps?q={latitud},{longitud}&key={apiKey}";
